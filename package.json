@@ -1,0 +1,19 @@
+{
+  "name": "portfolio",
+  "version": "0.0.0",
+  "description": "Website that show technologie and project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zeubkiller/portfolio.git"
+  },
+  "author": "Sylvain Abelard",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/zeubkiller/portfolio/issues"
+  },
+  "homepage": "https://github.com/zeubkiller/portfolio#readme"
+}
