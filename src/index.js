@@ -29,6 +29,48 @@ class Square extends React.Component {
         this.setState({squareValue: squareValue, xIsNext: !this.state.xIsNext});
     }
 
+    checkWinner() {
+      let winner = null;
+
+      const compareObject = {
+        row1: [0, 1, 2],
+        row2 : [3, 4, 5],
+        row3 : [6, 7, 8],
+
+        column1 : [0, 3, 6],
+        column2 : [1, 4, 7],
+        column3 : [2, 5, 8],
+
+        diagonal1 : [0, 4, 8],
+        diagonal2 : [2, 4, 6]
+      };
+      
+      for(const propertyName in compareObject){
+        let previousValue = null;
+
+        const filteredWinner = compareObject[propertyName].filter( (index) => {
+          const currentValue = this.state.squareValue[index];
+
+          if(currentValue !== null && (previousValue === null || previousValue === currentValue)) {
+            previousValue = currentValue;
+
+            return true;
+          }
+          else
+            return false;
+        });
+
+        if(filteredWinner.length === 3) {
+          winner = previousValue;
+          break;
+        }
+
+        console.log("----------------------------------------------------");
+      }
+
+      return winner;
+    }
+
     renderSquare(i) {
       return <Square    value={this.state.squareValue[i]}
                         onClick={()=> this.handleClick(i)}
@@ -37,9 +79,11 @@ class Square extends React.Component {
   
     render() {
       const status = 'Next player: ' + this.nextPlayer() ;
+      const winner = 'The winner is: ' + this.checkWinner() ;
   
       return (
         <div>
+          <div className="status">{winner}</div>
           <div className="status">{status}</div>
           <div className="board-row">
             {this.renderSquare(0)}
