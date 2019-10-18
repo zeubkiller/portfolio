@@ -6,7 +6,7 @@ import Menu from './Menu.js'
 
 
 function Main() {
-    return <div><Menu></Menu><div>BODY</div></div>;
+    return <div><Menu></Menu><div>Dru</div></div>;
 }
 
 export default Main;
