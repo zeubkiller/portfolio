@@ -1,16 +1,13 @@
 import React from 'react';
 
-import Jumbotron from "react-bootstrap/Jumbotron";
-
 import './App.css';
 
-import Main from './Main.js'
+import Menu from './Menu.js';
+
 
 function App() {
   return (
-    <Jumbotron>
-      <Main />
-    </Jumbotron>
+      <Menu />
   );
 }
 
